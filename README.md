@@ -46,6 +46,17 @@ Option 2
   - Open:
     - `http://localhost:8000/app/`
 ## Ss
+<img width="1030" height="851" alt="Captura de pantalla 2026-03-03 a la(s) 4 04 21 p  m" src="https://github.com/user-attachments/assets/444343ea-0d4a-4168-bf8f-050cffa3f732" />
+<img width="1027" height="941" alt="Captura de pantalla 2026-03-03 a la(s) 4 04 34 p  m" src="https://github.com/user-attachments/assets/4d1e4e8c-511e-4b01-822f-7de403e25c9c" />
+<img width="1001" height="936" alt="Captura de pantalla 2026-03-03 a la(s) 4 04 49 p  m" src="https://github.com/user-attachments/assets/539b88b8-541c-4d09-a7ac-d323611fa1c7" />
+<img width="1006" height="1086" alt="Captura de pantalla 2026-03-03 a la(s) 4 04 58 p  m" src="https://github.com/user-attachments/assets/3ffadb73-b34d-4681-8e39-69eb52e0c12a" />
+<img width="1006" height="1226" alt="Captura de pantalla 2026-03-03 a la(s) 4 05 11 p  m" src="https://github.com/user-attachments/assets/6c89e39f-523b-41cb-9065-5e74636c2911" />
 
 
-## Video
+
+
+
+
+
+## Video on Youtube
+https://youtu.be/uCkMjRCEiWU
