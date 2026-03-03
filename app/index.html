@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Disci-app | Laboratorio 4</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <h1>Disci-app</h1>
+      <p class="subtitle">Misiones, recompensas y disciplina con sabor a videojuego 🎮</p>
+    </header>
+
+    <main class="container">
+      <section class="card stats" aria-label="Estadísticas">
+        <div class="stat">
+          <span class="label">XP global</span>
+          <span id="globalXp" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Rango</span>
+          <span id="rank" class="value">Novice</span>
+        </div>
+        <p class="hint">Tip: abre la consola del navegador para ver el <code>console.log</code> de cada misión creada.</p>
+      </section>
+
+      <section class="card" aria-label="Crear misión">
+        <h2>Crear misión</h2>
+        <form id="missionForm" class="form">
+          <label class="field">
+            <span>Nombre</span>
+            <input id="name" type="text" placeholder="Ej: Leer 20 min" required maxlength="40" />
+          </label>
+
+          <label class="field">
+            <span>Descripción</span>
+            <textarea id="description" placeholder="¿Qué vas a hacer exactamente?" required maxlength="160"></textarea>
+          </label>
+
+          <label class="field">
+            <span>Dificultad</span>
+            <select id="difficulty" required>
+              <option value="Fácil">Fácil (10 XP)</option>
+              <option value="Normal">Normal (25 XP)</option>
+              <option value="Difícil">Difícil (50 XP)</option>
+            </select>
+          </label>
+
+          <button class="btn" type="submit">Agregar misión</button>
+        </form>
+      </section>
+
+      <section class="card" aria-label="Lista de misiones">
+        <div class="row">
+          <h2>Misiones</h2>
+          <div class="filters">
+            <button id="filterAll" class="chip chip-active" type="button">Todas</button>
+            <button id="filterPending" class="chip" type="button">Pendientes</button>
+            <button id="filterDone" class="chip" type="button">SUCCESFUL</button>
+          </div>
+        </div>
+        <ul id="missionsList" class="missions" aria-live="polite"></ul>
+        <p id="emptyState" class="empty">Todavía no hay misiones. Crea la primera y gana XP.</p>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <small>Laboratorio 4 | HTML, CSS y JS puro</small>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
