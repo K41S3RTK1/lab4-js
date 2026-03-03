@@ -1,4 +1,3 @@
-/* JS puro, sin librerías */
 const STORAGE_KEY = "disciapp_state_v1";
 
 const XP_BY_DIFFICULTY = {
@@ -7,11 +6,10 @@ const XP_BY_DIFFICULTY = {
   "Difícil": 50,
 };
 
-// 3 categorías (ajústalas si tu profe te pide otros nombres/umbrales)
 function getRank(globalXp) {
-  if (globalXp < 50) return "Novice";
-  if (globalXp < 100) return "Wizard";
-  return "Sorcerer";
+  if (globalXp < 50) return "Normal";
+  if (globalXp < 120) return "Disciplinado";
+  return "Legendario";
 }
 
 function safeTrim(value) {
@@ -66,7 +64,6 @@ function createMission({ name, description, difficulty }) {
     completedAt: null,
   };
 
-  // Requisito: console.log por cada actividad creada
   console.log("Misión creada:", mission);
 
   return mission;
@@ -182,6 +179,8 @@ function wireUI() {
   const descEl = document.getElementById("description");
   const diffEl = document.getElementById("difficulty");
 
+  const resetBtn = document.getElementById("resetAll");
+
   const fAll = document.getElementById("filterAll");
   const fPending = document.getElementById("filterPending");
   const fDone = document.getElementById("filterDone");
@@ -197,7 +196,7 @@ function wireUI() {
       if (!name || !description) return;
 
       const mission = createMission({ name, description, difficulty });
-      state.missions.unshift(mission); // nuevas primero
+      state.missions.unshift(mission);
 
       saveState(state);
       updateStats(state);
@@ -206,6 +205,21 @@ function wireUI() {
       form.reset();
       diffEl.value = "Fácil";
       nameEl.focus();
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      const ok = confirm("¿Seguro que quieres reiniciar todo? Se borrarán misiones y XP.");
+      if (!ok) return;
+
+      state.missions = [];
+      localStorage.removeItem(STORAGE_KEY);
+
+      currentFilter = "ALL";
+      setChipActive("filterAll");
+      updateStats(state);
+      renderMissions(state, currentFilter);
     });
   }
 

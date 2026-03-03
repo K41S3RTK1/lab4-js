@@ -9,7 +9,7 @@
   <body>
     <header class="container header">
       <h1>Disci-app</h1>
-      <p class="subtitle">Misiones, recompensas y disciplina con sabor a videojuego 🎮</p>
+      <p class="subtitle">Completa tus misiones o tarea y gana XP para tener un mejor Rango</p>
     </header>
 
     <main class="container">
@@ -20,9 +20,8 @@
         </div>
         <div class="stat">
           <span class="label">Rango</span>
-          <span id="rank" class="value">Novice</span>
-        </div>
-        <p class="hint">Tip: abre la consola del navegador para ver el <code>console.log</code> de cada misión creada.</p>
+          <span id="rank" class="value">Normal</span>
+        
       </section>
 
       <section class="card" aria-label="Crear misión">
@@ -48,6 +47,7 @@
           </label>
 
           <button class="btn" type="submit">Agregar misión</button>
+          <button class="btn btn-secondary" id="resetAll" type="button">Reiniciar todo</button>
         </form>
       </section>
 
