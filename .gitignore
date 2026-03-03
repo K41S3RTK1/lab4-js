@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Video (mejor no versionarlo)
+*.mp4
+*.mov
+*.mkv
+
+# Editor
+.vscode/
+.idea/
+
+# Otros
+Thumbs.db
