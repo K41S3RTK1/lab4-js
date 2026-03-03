@@ -1,58 +1,51 @@
-# Laboratorio 4 - JavaScript (Disci-app)
+# Lab 4 - JavaScript | Disci-app
 
-Web-app hecha con **HTML + CSS + JavaScript puro** (sin librerías/frameworks) para gamificar hábitos usando misiones, XP global y rangos.  
-Requisitos del laboratorio: crear misiones con nombre/descripcion/dificultad, asignar XP por dificultad, sumar XP global solo con actividades terminadas, elegir 3 categorías por XP, `console.log` por misión creada, mostrar misiones en lista, y marcar misión como **SUCCESFUL** al completarla.  
+Disci-app is a web application built with plain HTML, CSS, and JavaScript. It allows users to create missions with a name, description, and difficulty, automatically assigns XP, and accumulates global XP only when a mission is completed. It also includes rank levels based on total XP and a button to reset everything.
 
-## Estructura del repo
+## Main features
 
-- `app/` código fuente (no hay archivos de código en el root)
-  - `index.html`
-  - `styles.css`
-  - `main.js`
-- `docs/screenshots/` capturas (colócalas aquí y referencia en este README)
-- `.gitignore`
-- `README.md`
+- Create missions with:
+  - Name
+  - Description
+  - Difficulty: Easy, Normal, Hard
+- XP per difficulty:
+  - Easy: 10 XP
+  - Normal: 25 XP
+  - Hard: 50 XP
+- When a mission is created, a `console.log` prints the mission object.
+- Missions are displayed in a list.
+- Each mission can be marked as completed and its status becomes **SUCCESFUL**.
+- Global XP only sums XP from missions with **SUCCESFUL** status.
+- Ranks based on global XP:
+  - 0 to 49: Normal
+  - 50 to 119: Disciplined
+  - 120 or more: Legendary
+- **Reset All** button to clear missions and reset XP and rank.
+- Data persistence using `localStorage` so missions remain after reloading the page.
 
-## Cómo correrlo
+## Project structure
 
-Opción A (rápida):
-1. Abre `app/index.html` en tu navegador (doble click o “Open with…”).
+- `app/`
+  - `index.html` Application UI: form to create missions, stats section, and mission list.
+  - `styles.css` Visual styling for the application.
+  - `main.js` Application logic: mission creation, XP, ranks, status updates, filters, persistence, and reset.
+- `docs/`
+  - `screenshots/` Folder intended for screenshots of the app running.
+- `README.md` Project documentation.
+- `.gitignore` Rules to ignore unnecessary files in the repository.
 
-Opción B (opcional, puntos extra con nginx):
-1. Instala nginx con Homebrew: `brew install nginx`
-2. Copia la carpeta `app` al root público de nginx (puede variar según tu setup). Ejemplo común en mac:
-   ```bash
-   PREFIX="$(brew --prefix)"
-   sudo rm -rf "$PREFIX/var/www/lab4-js"
-   sudo cp -R ./app "$PREFIX/var/www/lab4-js"
-   brew services restart nginx
-   ```
-3. Abre la URL que tengas configurada (ejemplo frecuente): `http://localhost:8080/lab4-js/index.html`
+## How to run the app
 
-## Qué debo demostrar en el video
+Option 1
+- Open `app/index.html` in a web browser.
 
-- Crear misiones con nombre, descripción y dificultad.
-- Mostrar que cada dificultad asigna XP: Fácil 10, Normal 25, Difícil 50.
-- Mostrar el `console.log` que imprime el objeto de la misión al crearla.
-- Mostrar la lista de misiones en pantalla.
-- Marcar una misión como terminada y que quede con estado **SUCCESFUL**.
-- Mostrar que el XP global sube solo con misiones terminadas.
-- Mostrar cómo cambia el rango según el XP global.
+Option 2
+- Start a local server with Python and open it in the browser:
+  - From the project root run:
+    - `python3 -m http.server 8000`
+  - Open:
+    - `http://localhost:8000/app/`
+## Ss
 
-## Capturas sugeridas (para la entrega)
 
-Guarda imágenes en `docs/screenshots/` y agrega aquí enlaces:
-- Pantalla principal con XP y rango
-- Formulario con datos
-- Lista con varias misiones
-- Al menos una misión en estado **SUCCESFUL**
-- Consola mostrando el `console.log` de una misión creada
-
-## Commits mínimos (ejemplo)
-
-1. `chore: estructura inicial + README + .gitignore`
-2. `feat: crear misiones y renderizar lista`
-3. `feat: completar misiones, XP global y rangos (localStorage)`
-
-## Autor
-- Tu nombre aquí
+## Video
